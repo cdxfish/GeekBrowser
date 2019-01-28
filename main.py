@@ -36,7 +36,7 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
 
-        self.setWindowTitle('PySide2 tabbed browser Example')
+        self.setWindowTitle('GeekBrowser')
 
         self._tab_widget = BrowserTabWidget(create_main_window_with_browser)
         self._tab_widget.enabled_changed.connect(self._enabled_changed)
@@ -333,8 +333,8 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     main_win = create_main_window()
     initial_urls = sys.argv[1:]
-    if not initial_urls:
-        initial_urls.append('http://qt.io')
+    # if not initial_urls:
+    #    initial_urls.append('http://qt.io')
     for url in initial_urls:
         main_win.load_url_in_new_tab(QUrl.fromUserInput(url))
     exit_code = app.exec_()
